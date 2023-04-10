@@ -28,7 +28,7 @@ export const getReviews = async (req, res) => {
         const data = await Reviewmodel.aggregate([
             { $match: { turf: new mongoose.Types.ObjectId(req.query.id) } },
             { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },
-            { $unwind: '$user' },
+            // { $unwind: '$user' },
             { $project: { 'user.username': 1, rating: 1, review: 1, createdAt: 1, 'user.profile': 1, } },
         ])
         return res.status(200).json(data)
