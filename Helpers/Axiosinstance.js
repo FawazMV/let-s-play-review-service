@@ -1,5 +1,5 @@
 import Axios from 'axios'
 
 export const Axiosturf = Axios.create({
-    baseURL: 'http://3.27.116.175'
+    baseURL: 'https://let-s-play-turf-service.onrender.com'
 })

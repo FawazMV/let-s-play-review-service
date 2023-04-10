@@ -10,7 +10,7 @@ dotenv.config()
 const app = express()
 app.use(express.json());
 const corsOptions = {
-    origin: ['http://3.27.116.175', 'http://3.26.144.127'],
+    origin: ['https://let-s-play-turf-service.onrender.com', 'https://let-s-play-user-service.onrender.com'],
     methods: 'GET,POST,PATCH,PUT,DELETE',
     preflightContinue: true,
     optionsSuccessStatus: 200,
