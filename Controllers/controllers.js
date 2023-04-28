@@ -33,7 +33,7 @@ export const getReviews = async (req, res) => {
             { $project: { 'user.username': 1, rating: 1, review: 1, createdAt: 1, 'user.profile': 1, } },
         ])
         console.log(data)
-        return res.status(200).json(data)
+        return res.status(200).json({data})
     }
     catch (error) {
         console.error(error)
