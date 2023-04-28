@@ -5,6 +5,7 @@ import Reviewmodel from "../Models/Review_Model.js"
 export const reviewSubmit = async (req, res) => {
     try {
         const { id, text, rating, user } = req.body;
+        console.log(req.body)
         const newReview = Reviewmodel({
             rating, user, review: text, turf: id
         })
@@ -31,6 +32,7 @@ export const getReviews = async (req, res) => {
             // { $unwind: '$user' },
             { $project: { 'user.username': 1, rating: 1, review: 1, createdAt: 1, 'user.profile': 1, } },
         ])
+        console.log(data)
         return res.status(200).json(data)
     }
     catch (error) {
