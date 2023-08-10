@@ -14,7 +14,7 @@ export const reviewSubmit = async (req, res) => {
             { $group: { _id: 1, avgRating: { $avg: "$rating" } } }
         ])
         if (result.length) {
-            await axios.patch('/rating-update', { id, rating: result[0].avgRating })
+            await axios.put('/rating-update', { id, rating: result[0].avgRating })
         }
         return res.status(200).json({ message: "review added successfully" })
     }
